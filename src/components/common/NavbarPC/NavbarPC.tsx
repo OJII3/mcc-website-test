@@ -7,7 +7,7 @@ import styles from './style.module.css';
 
 import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
 
-const NavbarPC: FC = () => {
+export const NavbarPC: FC = () => {
 	const pathname = useRouter().pathname.match(/\/.+?(\/|$)/)?.[0].replace(/\/$/, '');
 	const links = BASE_ROUTES_LIST.map((route) => {
 		const isActive = route.PATH === pathname ? true : false;
@@ -21,7 +21,7 @@ const NavbarPC: FC = () => {
 	});
 
 	return (
-		<header>
+		<header className={styles.header}>
 			<nav className={styles.navbar}>
 				<Link className={styles.brandLink} href={ROUTES.HOME.PATH}>
 					<Image alt="" src="/mcc-logo.svg" width={48} height={48} className={styles.brandLogo} />
@@ -32,5 +32,3 @@ const NavbarPC: FC = () => {
 		</header>
 	);
 };
-
-export default NavbarPC;

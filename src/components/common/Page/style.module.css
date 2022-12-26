@@ -1,8 +1,0 @@
-.container {
-  width: 100%;
-  padding: var(--navbar-pc-height) 0 0;
-
-  @media screen and (max-width: 48em) {
-    padding: 0 0 var(--navbar-mobile-height);
-  }
-}
