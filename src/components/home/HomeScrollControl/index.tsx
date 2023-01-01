@@ -88,7 +88,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
 				MCC
 			</h1>
-			<button className={styles.downArrow} style={{ top: vH * 0.9, opacity: opacities[1] }} />
+			<div className={styles.downArrow} style={{ top: vH * 0.9, opacity: opacities[1] }} />
 			<h2 className={styles.name2} style={{ top: vH * 1.1, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
@@ -111,23 +111,17 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				</span>
 				<span className={styles.sentence}>それが、私たちTUATMCCです。</span>
 			</p>
-			<div className={styles.bottms} style={{ top: vH * 2.95 }}>
+			<div className={styles.bottms} style={{ top: vH * 2.8, height: vH * (3 - 2.5) }}>
 				<div className={styles.cards}>
-					<div className={styles.cardItem}>
-						<Link href="/about" className={styles.cardLink}>
-							もっとMCCを知る →
-						</Link>
-					</div>
-					<div className={styles.cardItem}>
-						<Link href="/activities" className={styles.cardLink}>
-							活動報告 →
-						</Link>
-					</div>
-					<div className={styles.cardItem}>
-						<Link href="/contact" className={styles.cardLink}>
-							ブログ →
-						</Link>
-					</div>
+					<Link href="/about" className={styles.cardItem}>
+						もっとMCCを知る →
+					</Link>
+					<Link href="/activities" className={styles.cardItem}>
+						活動報告 →
+					</Link>
+					<Link href="/contact" className={styles.cardItem}>
+						ブログ →
+					</Link>
 					<div className={styles.socials}>
 						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer">
 							<TwitterIcon />

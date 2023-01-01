@@ -1,16 +1,21 @@
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { FC } from 'react';
 
-import { ROUTES } from '~/constants/routes';
+import { Helmet } from '~/components/common/Helmet';
+import HomePageComponent from '~/components/home/HomePageComponent';
 
-const IndexPage: NextPage = () => {
-	const router = useRouter();
+const meta = {
+	title: 'Home',
+	description: '東京農工大学マイクロコンピュータークラブ(TUATMCC)の公式ホームページです。',
+	img: '/mcc-logo.svg',
+};
 
-	useEffect(() => {
-		router.replace(ROUTES.HOME.PATH);
-	}, [router]);
-	return <div>Loading...</div>;
+const IndexPage: FC = () => {
+	return (
+		<>
+			<Helmet meta={meta} />
+			<HomePageComponent />;
+		</>
+	);
 };
 
 export default IndexPage;
