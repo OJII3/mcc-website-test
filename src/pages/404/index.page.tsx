@@ -2,11 +2,12 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { SEO } from '~/features/seo';
+import { SEO } from '~/features/SEO';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
+import { MetaData } from '~/types/meta';
 
-const meta = {
+const meta: MetaData = {
 	title: '404',
 	description: '404 Page Not Found',
 };
@@ -15,7 +16,7 @@ const NotFoundPage: FC = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<div className={styles.background} />
 			<main>
 				<div className={styles.mainContent}>

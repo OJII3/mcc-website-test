@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
+import { SEO } from '~/features/SEO';
 import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
 import { Post, PostCollector } from '~/features/markdown/post-collector';
-import { SEO } from '~/features/seo';
 import { Navbar } from '~/features/ui/Navbar';
 import { DynamicRouting } from '~/routes/dynamic-routing';
 

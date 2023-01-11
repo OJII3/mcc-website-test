@@ -4,12 +4,13 @@ import { useContext } from 'react';
 
 import styles from './style.module.css';
 
+import { SEO } from '~/features/SEO';
 import { PostCollector, PostCollectorProps } from '~/features/markdown/post-collector';
 import { MediaQueryContext } from '~/features/media-query';
-import { SEO, MetaData } from '~/features/seo';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
 import { Tag, TagList } from '~/features/ui/Tag';
+import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 
 const meta: MetaData = {
@@ -24,7 +25,7 @@ const WorksPage = ({ posts }: PostCollectorProps) => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme="auto" />
+			<Navbar theme='auto' />
 			<div className={styles.background} />
 			<header>
 				<div className={styles.headerContent}>
@@ -72,7 +73,7 @@ const WorksPage = ({ posts }: PostCollectorProps) => {
 												))}
 											</TagList>
 										)}
-										{post.frontmatter.date && <div>{post.frontmatter.date}</div>}
+										{post.frontmatter.date && <div className={styles.date}>{post.frontmatter.date}</div>}
 										{post.frontmatter.description && (
 											<p className={styles.description}>{post.frontmatter.description}</p>
 										)}

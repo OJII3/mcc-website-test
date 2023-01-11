@@ -4,9 +4,9 @@ import { FC, useContext } from 'react';
 
 import styles from './style.module.css';
 
+import { SEO } from '~/features/SEO';
 import { PostCollector, PostCollectorProps } from '~/features/markdown/post-collector';
 import { MediaQueryContext } from '~/features/media-query';
-import { SEO } from '~/features/seo';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
 import { Tag, TagList } from '~/features/ui/Tag';
@@ -25,7 +25,7 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<div className={styles.background} />
 			<header>
 				<div className={styles.headerContent}>
@@ -73,7 +73,7 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 												))}
 											</TagList>
 										)}
-										{post.frontmatter.date && <div>{post.frontmatter.date}</div>}
+										{post.frontmatter.date && <div className={styles.date}>{post.frontmatter.date}</div>}
 										{post.frontmatter.description && (
 											<p className={styles.description}>{post.frontmatter.description}</p>
 										)}
